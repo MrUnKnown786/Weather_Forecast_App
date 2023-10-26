@@ -1,0 +1,26 @@
+<h1 style="text-align: center; font-family: BLKB Sans,Helvetica Neue,Arial,sans-serif;">Search Results for "{{searchtext}}"</h1>
+
+<div *ngIf="!searchresults?.length" style="margin-top: 20px; text-align: center; font-family: BLKB Sans,Helvetica Neue,Arial,sans-serif;">
+    No results found please try again....
+    <br>
+    <a style="margin-top: 25px;" href="/" class="sky-btn sky-btn-primary">Back</a>
+</div>
+
+<div *ngIf="searchresults?.length" style="justify-content: center; font-family: BLKB Sans,Helvetica Neue,Arial,sans-serif; margin: 50px 25vw 50px 25vw;">
+    <sky-box class="box" data-sky-id="box-demo" [ariaLabel]="'boxDemo'">
+        <div *ngFor="let item of searchresults" >
+            <a href="/weather/{{item.latitude}}/{{item.longitude}}"  class="sky-btn sky-btn-default" style="width: 100%;">
+                <div>
+                    <img height="24" src="https://open-meteo.com/images/country-flags/{{item.country_code}}.svg" title="{{item.country}}" alt="{{item.country_code}}">
+                    <span style="font-size: 20px; margin-left: 10px;">{{item.name}}</span>
+                    <br>
+                    <span style="color: rgba(33, 37, 41, .75);">{{item.admin1}} ({{item.latitude}}&#176;E {{item.longitude}}&#176;N)</span>
+                </div>
+            </a>
+        </div>
+    </sky-box>
+</div>
+
+<footer *ngIf="searchresults?.length" style="font-family: BLKB Sans,Helvetica Neue,Arial,sans-serif; text-align: center;">
+    <b>End of the Results</b>
+</footer>

@@ -1,0 +1,16 @@
+<h1 style="text-align: center; font-family: BLKB Sans,Helvetica Neue,Arial,sans-serif;">Weekly Weather Forecast</h1>
+<div style="flex-wrap: wrap; justify-content: center; font-family: BLKB Sans,Helvetica Neue,Arial,sans-serif; display: flex;">
+
+    <sky-box *ngFor="let item of weatherData" class="box" data-sky-id="box-demo" [ariaLabel]="'boxDemo'">
+        <sky-box-header style="text-align: center;">
+          <h2 class="sky-font-heading-2">{{item.date}}</h2>
+        </sky-box-header>
+        <sky-box-content>
+            <p>Temperature: {{ item.temp_High }}/{{ item.temp_Low }}</p>
+            <p>Apparent Temperature: {{ item.app_Temp_High }}/{{ item.app_Temp_Low }}</p>
+            <p>Average Relative Humidity: {{ item.humidity }}</p>
+            <p>Precipitation Probability: {{ item.precipitation_Prob }}</p>
+            <p>Precipitation: {{ item.precipitation }}</p>
+        </sky-box-content>
+      </sky-box>
+</div>

@@ -1,0 +1,8 @@
+<div style="text-align: center; justify-content: center; padding: 40vh;">
+    <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+        <sky-input-box>
+            <input formControlName="city" id="city" type="text" placeholder="Enter City (minimum 2 letters required)" />
+        </sky-input-box>
+        <button [disabled]="!Form.valid" class="sky-btn sky-btn-primary" style="margin-top: 5px;">Search</button>
+      </form>
+</div>
